@@ -16,7 +16,6 @@ int main() {
 #pragma omp parallel default(none)\
     private(r_x, r_y, x_seed, y_seed, i, tid) \
     shared(INTERVAL, circle_points)
-
     {
         tid = omp_get_thread_num();
         x_seed = (time(NULL) & 0xFFFFFFF0) | (tid + 1);
