@@ -21,7 +21,7 @@ void random_graph(int n, int mat[n][n]) {
     }
 }
 
-void PrintMatrix(int n, int mat[n][n]) {
+void print_matrix(int n, int mat[n][n]) {
     int i, j;
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
@@ -108,7 +108,7 @@ int main() {
     time_start = omp_get_wtime();
 
     random_graph(n, init_matrix);
-    PrintMatrix(n, init_matrix);
+    print_matrix(n, init_matrix);
     power(n, init_matrix, res_matrix, 7);
 
 
@@ -116,7 +116,7 @@ int main() {
 
     printf("Time: %f sec\n", end_time - time_start);
 
-    PrintMatrix(n, res_matrix);
+    print_matrix(n, res_matrix);
 
     return 0;
 }
