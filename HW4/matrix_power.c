@@ -4,8 +4,6 @@
 
 void random_graph(int n, int mat[n][n]) {
     unsigned int tid, seed;
-    tid = omp_get_thread_num();
-
 #pragma omp parallel for  private(seed, tid) shared(mat, n) default(none)
     for (int i = 0; i < n; i++) {
         tid = omp_get_thread_num();
